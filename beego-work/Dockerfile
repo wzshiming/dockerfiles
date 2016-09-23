@@ -1,7 +1,5 @@
 # beego 开发环境
 FROM wzshiming/golang:latest
-ENV GOPATH ~/src
-ENV GOBIN ~/bin
 ENV PATH $PATH:$GOBIN
 RUN go get github.com/beego/bee
 RUN go install github.com/beego/bee

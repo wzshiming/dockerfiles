@@ -1,3 +1,3 @@
-# wzshiming/beego
-# 构建了golang 编译环境
-# -v workdir:~/src/app
+# wzshiming/beego-work
+# beego 开发环境
+# -v workdir:/tmp/src/app

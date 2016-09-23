@@ -1,4 +1,4 @@
 # wzshiming/golang
 # 构建了golang 编译环境
-# GOPATH=~/src
-# GOBIN=~/bin
+# GOPATH=/tmp/src
+# GOBIN=/tmp/bin

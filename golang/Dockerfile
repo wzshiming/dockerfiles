@@ -4,4 +4,4 @@ WORKDIR /tmp/
 ENV GOPATH /tmp/
 ENV GOBIN /tmp/bin
 ENV PATH $PATH:$GOBIN
-RUN apk -U --no-cache add go git
+RUN apk -U --no-cache add go git gcc

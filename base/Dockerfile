@@ -2,3 +2,5 @@
 FROM alpine:3.4
 # 换源
 COPY ./vol /
+# 更新
+RUN apk update

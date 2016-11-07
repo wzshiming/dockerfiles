@@ -11,8 +11,8 @@ RUN yes y | apt-get install bash zsh vim nmap w3m git
 RUN git clone https://github.com/wzshiming/misc_cfg && cp ./misc_cfg/.vimrc ./misc_cfg/.zshrc ~/ && rm -rf ./misc_cfg
 
 # docker 环境
-RUN yes y | apt-get install docker python-setuptools
-RUN easy_install pip
+RUN yes y | apt-get install docker python-pip
+RUN pip install docker-comose
 
 # golang 环境
 ENV GOPATH /tmp/

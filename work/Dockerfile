@@ -1,6 +1,23 @@
 # 构建了工作 开发环境
-FROM wzshiming/base:latest
+FROM ubuntu:16.04
 WORKDIR ~
-RUN apk -U --no-cache add bash zsh vim git nmap docker
-RUN git clone https://github.com/wzshiming/misc_cgf && cp ./misc_cgf/.vimrc ./misc_cgf/.zshrc ~/ && rm -rf ./misc_cgf
+
+# 换源
+COPY ./vol /
+
+# 基础环境
+RUN yes y | apt-get update
+RUN yes y | apt-get install bash zsh vim nmap w3m git
+RUN git clone https://github.com/wzshiming/misc_cfg && cp ./misc_cfg/.vimrc ./misc_cfg/.zshrc ~/ && rm -rf ./misc_cfg
+
+# docker 环境
+RUN yes y | apt-get install docker python-pip
+RUN pip install docker-compose
+
+# golang 环境
+ENV GOPATH /tmp/
+ENV GOBIN /tmp/bin
+ENV PATH $PATH:$GOBIN
+RUN yes y | apt-get install go gcc
+
 ENTRYPOINT zsh 

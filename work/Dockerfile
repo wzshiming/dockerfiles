@@ -12,7 +12,7 @@ RUN git clone https://github.com/wzshiming/misc_cfg && cp ./misc_cfg/.vimrc ./mi
 
 # docker 环境
 RUN yes y | apt-get install docker python-pip
-RUN pip install docker-comose
+RUN pip install docker-compose
 
 # golang 环境
 ENV GOPATH /tmp/

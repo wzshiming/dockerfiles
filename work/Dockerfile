@@ -1,10 +1,13 @@
 # 构建了工作 开发环境
-FROM ubuntu:xenial-20161010
+FROM ubuntu:16.04
 WORKDIR ~
+
+# 换源
+COPY ./vol /
 
 # 基础环境
 RUN yes y | apt-get update
-RUN yes y | apt-get install bash zsh vim git nmap w3m
+RUN yes y | apt-get install bash zsh vim nmap w3m git
 RUN git clone https://github.com/wzshiming/misc_cfg && cp ./misc_cfg/.vimrc ./misc_cfg/.zshrc ~/ && rm -rf ./misc_cfg
 
 # docker 环境

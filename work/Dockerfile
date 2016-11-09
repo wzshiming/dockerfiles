@@ -11,7 +11,7 @@ RUN apt-get -y install bash zsh vim nmap w3m git
 RUN git clone https://github.com/wzshiming/misc_cfg && cp ./misc_cfg/.vimrc ./misc_cfg/.zshrc ~/ && rm -rf ./misc_cfg
 
 # golang 环境
-RUN apt-get -y install go gcc
+RUN apt-get -y install golang gcc
 ENV GOPATH /tmp/
 ENV GOBIN /tmp/bin
 ENV PATH $PATH:$GOBIN

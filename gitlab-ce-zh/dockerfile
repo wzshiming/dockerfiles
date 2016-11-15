@@ -1,9 +1,1 @@
-FROM gitlab/gitlab-ce:8.8.8-ce.0
-
-RUN git clone https://gitlab.com/larryli/gitlab.git \
-    && cd gitlab \
-    && git diff origin/8-8-stable..origin/8-8-zh > ../zh_CN.diff \
-    && patch -d /opt/gitlab/embedded/service/gitlab-rails -p1 < ../zh_CN.diff \
-    && cd .. \
-    && rm -rf gitlab \
-    && rm *.diff
+FROM twang2218/gitlab-ce-zh:8.8

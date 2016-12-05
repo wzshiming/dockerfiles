@@ -19,5 +19,5 @@ ENV PATH $PATH:$GOBIN
 # # docker 环境
 # RUN apt-get -y install docker python-pip
 # RUN pip install docker-compose
-
-ENTRYPOINT zsh 
+CMD zsh
+#ENTRYPOINT zsh 

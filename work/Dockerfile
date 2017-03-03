@@ -2,11 +2,6 @@
 FROM kalilinux/kali-linux-docker
 WORKDIR ~
 
-# 基础环境
-RUN apt-get -y dist-upgrade
-RUN apt-get -y update & apt-get -y upgrade
-
-
 # 设置语言
 # debian 的
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen

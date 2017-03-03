@@ -3,6 +3,9 @@ FROM kalilinux/kali-linux-docker
 WORKDIR ~
 
 # 基础环境
+RUN echo "deb http://mirrors.aliyun.com/kali sana main non-free contrib" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.aliyun.com/kali sana main non-free contrib" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/kali-security sana/updates main contrib non-free" >> /etc/apt/sources.list
 RUN apt-get -y dist-upgrade
 RUN apt-get -y update & apt-get -y upgrade
 
@@ -21,7 +24,10 @@ RUN dpkg-reconfigure locales
 # RUN echo "export LANG=zh_CN.UTF-8" >> /etc/profile
 
 # 安装软件包
-RUN apt-get -y install bash zsh vim w3m git curl wget iputils-ping nmap
+RUN apt-get -y install bash zsh openssl
+RUN apt-get -y install vim w3m 
+RUN apt-get -y install git curl wget 
+RUN apt-get -y install iputils-ping nmap
 RUN cd ~ && git clone https://github.com/wzshiming/misc_cfg && cp ./misc_cfg/.vimrc ./misc_cfg/.zshrc ~/ && rm -rf ./misc_cfg
 
 # c/c++ 环境

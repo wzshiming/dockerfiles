@@ -21,7 +21,7 @@ RUN dpkg-reconfigure locales
 # RUN echo "export LANG=zh_CN.UTF-8" >> /etc/profile
 
 # 安装软件包
-RUN apt-get -y install bash zsh openssl
+RUN apt-get -y install bash zsh
 RUN apt-get -y install vim w3m 
 RUN apt-get -y install git curl wget 
 RUN apt-get -y install iputils-ping nmap

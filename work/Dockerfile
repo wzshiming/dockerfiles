@@ -3,9 +3,6 @@ FROM kalilinux/kali-linux-docker
 WORKDIR ~
 
 # 基础环境
-RUN echo "deb http://mirrors.aliyun.com/kali sana main non-free contrib" >> /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.aliyun.com/kali sana main non-free contrib" >> /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/kali-security sana/updates main contrib non-free" >> /etc/apt/sources.list
 RUN apt-get -y dist-upgrade
 RUN apt-get -y update & apt-get -y upgrade
 

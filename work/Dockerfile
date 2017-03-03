@@ -6,8 +6,8 @@ WORKDIR ~
 RUN apt-get -y update
 
 # 设置语言
-RUN apt-get install language-pack-en-base
-RUN apt-get install language-pack-zh-hans-base
+RUN apt-get -y install language-pack-en-base
+RUN apt-get -y install language-pack-zh-hans-base
 RUN echo "export LANGUAGE=zh_CN.UTF-8" >> /etc/profile
 RUN echo "export LC_ALL=zh_CN.UTF-8" >> /etc/profile
 RUN echo "export LANG=zh_CN.UTF-8" >> /etc/profile

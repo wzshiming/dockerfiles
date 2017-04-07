@@ -1,5 +1,5 @@
 # 构建了golang 编译环境
-FROM golang 1.8.0-alpine
+FROM golang:1.8.0-alpine
 WORKDIR /tmp/
 ENV GOPATH /tmp/
 ENV GOBIN /tmp/bin

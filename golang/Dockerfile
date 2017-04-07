@@ -1,7 +1,6 @@
 # 构建了golang 编译环境
-FROM wzshiming/base:latest
+FROM golang 1.8.0-alpine
 WORKDIR /tmp/
 ENV GOPATH /tmp/
 ENV GOBIN /tmp/bin
-ENV PATH $PATH:$GOBIN
-RUN apk -U --no-cache add go git gcc
+RUN apk -U --no-cache add git gcc

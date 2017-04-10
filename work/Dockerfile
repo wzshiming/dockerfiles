@@ -22,7 +22,7 @@ RUN apt-get -y install bash zsh
 RUN apt-get -y install w3m 
 RUN apt-get -y install vim
 RUN apt-get -y install git curl wget 
-RUN apt-get -y install iputils-ping nmap dnsmap hydra
+RUN apt-get -y install iputils-ping dnsmap nmap hydra kali-linux-top10
 RUN cd ~ && git clone https://github.com/wzshiming/misc_cfg && cp ./misc_cfg/.vimrc ./misc_cfg/.zshrc ~/ && rm -rf ./misc_cfg
 
 # ruby 环境

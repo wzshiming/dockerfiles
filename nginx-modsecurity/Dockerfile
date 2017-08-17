@@ -19,7 +19,6 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		--http-scgi-temp-path=/var/cache/nginx/scgi_temp \
 		--user=nginx \
 		--group=nginx \
-		--with-nginx_tcp_proxy_module \
 		--with-http_ssl_module \
 		--with-http_realip_module \
 		--with-http_addition_module \

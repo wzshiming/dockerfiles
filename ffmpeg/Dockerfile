@@ -1,8 +1,9 @@
-
-FROM        wzshiming/base:latest
+FROM        alpine:3.6 AS base
 
 RUN     apk  add --no-cache --update libgcc libstdc++ ca-certificates libcrypto1.0 libssl1.0 libgomp expat
 
+
+FROM        base AS build
 
 WORKDIR     /tmp/workdir
 
@@ -300,6 +301,9 @@ RUN \
     cp ${PREFIX}/bin/* /usr/local/bin/ && \
     cp -r ${PREFIX}/share/ffmpeg /usr/local/share/ && \
     LD_LIBRARY_PATH=/usr/local/lib ffmpeg -buildconf
+
+### Release Stage
+FROM        base AS release
 
 CMD         ["--help"]
 ENTRYPOINT  ["ffmpeg"]
